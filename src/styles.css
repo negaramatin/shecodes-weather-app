@@ -1,0 +1,139 @@
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #383838;
+  font-weight: 300px;
+  text-align: center;
+  background: radial-gradient(
+    circle at 0.7% 1%,
+    rgb(215, 248, 247) 0%,
+    rgb(102, 188, 239) 100.2%
+  );
+}
+
+.container {
+  border: solid 4px #5585b5;
+  width: 70%;
+  padding: 30px;
+  position: relative;
+  top: 50px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+.mb-3 {
+  text-align: center;
+}
+.input-form {
+  border: solid 2px #5585b5;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 6px;
+  height: 38px;
+  width: 70%;
+}
+input {
+  outline-color: #53a8b6;
+}
+.btn {
+  border: solid 1px #53a8b6;
+  color: #fff;
+  background-color: #53a8b6;
+  transition: all 150ms ease;
+}
+.btn:hover {
+  border: solid 1px #79c2d0;
+  color: #fff;
+  background-color: #79c2d0;
+  cursor: pointer;
+}
+h1 {
+  font-weight: 300;
+  text-align: center;
+  margin: 0px;
+  padding: 10px 10px 0px 10px;
+}
+h2 {
+  text-align: center;
+  font-size: 16px;
+  margin: 0px;
+  padding: 5px 0px 10px 0px;
+}
+h3 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0px;
+  margin: 0px;
+}
+.current-city-temp {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+}
+
+.current-icon {
+  font-size: 72px;
+  padding: 0px;
+  text-align: center;
+}
+
+.current-deg {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+.forecast-col {
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 20%;
+}
+.forecast-col:hover {
+  background-color: rgba(255, 244, 185, 0.255);
+}
+
+.forecast-day {
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  padding: 10px;
+}
+.forecast-icon {
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+}
+.forecast-temp {
+  text-align: center;
+  display: block;
+  padding: 10px;
+}
+.footer {
+  position: relative;
+  bottom: -70px;
+  font-size: 14px;
+  font-weight: 400;
+}
+a {
+  color: #383838;
+  text-decoration: underline;
+}
+
+.convert {
+  font-size: 16px;
+  padding: 0px;
+  text-align: center;
+  font-weight: 500;
+}
+#convert-celsius,
+#convert-fahrenheit {
+  color: #604c96;
+  text-decoration: none;
+}
+#convert-celsius:hover,
+#convert-fahrenheit:hover {
+  color: #604c96;
+  text-decoration: none;
+  cursor: pointer;
+}
