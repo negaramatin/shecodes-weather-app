@@ -28,58 +28,40 @@
 
   <body>
     <div class="container">
-      <!-- Search Bar -->
-      <div class="row align-items-start">
-        <div class="col">
-          <h1 id="city">Kerman</h1>
-          <h2 id="date"></h2>
-          <span class="last-updated"></span>
+      <form class="search-form" id="search-form">
+        <div class="mb-3">
+          <input
+            type="text"
+            placeholder="Enter a city"
+            class="input-form"
+            id="city-input"
+          />
+          <button type="submit" class="btn btn-outline-primary">
+            Search🔍
+          </button>
         </div>
-        <div class="col city-search">
-          <br />
-          <form id="search">
-            <input
-              type="text"
-              placeholder="Enter a city"
-              class="input-form"
-              id="citySearch"
-            />
-            <button type="submit" class="btn btn-outline-primary" id="search">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-            <button type="submit" class="btn btn-outline-primary" id="location">
-              <i class="fa-solid fa-location-dot"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-
-      <!-- Current City information-->
+      </form>
       <br />
+
       <div class="row current-city">
-        <!-- Current Weather information-->
-        <div class="col"></div>
-
-        <div class="col current-icon">
-          <img src="" id="main-icon" />
-          <br /><span
-            class="justify-content-center"
-            id="temperature-description"
-          ></span>
-        </div>
-        <div class="col current-deg justify-content-center">
-          <span class="current-city-temp" id="temperature"></span><br />
-          <span class="convert">
-            <a href="#" id="convert-celsius" class="active">°C</a> |
-            <a href="#" id="convert-fahrenheit">°F</a>
-          </span>
-          <div class="justify-content-center" id="humidity"></div>
-          <div class="justify-content-center" id="wind"></div>
-        </div>
-        <div class="col"></div>
+        <h1 id="city">Kerman</h1>
       </div>
-      <!--- Forecast -->
+      <div class="row current-date">
+        <h2 id="date"></h2>
+        <br />
+        <br />
+      </div>
       <br />
+
+      <h3>Current Temperature</h3>
+      <div class="row current-city-temp">
+        <div class="col current-icon">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="col current-deg" height="50%" id="temperature">22°C</div>
+      </div>
+      <br />
+
       <div class="row forecast"><h2>5-day forecast</h2></div>
       <div class="row forecast">
         <div class="col forecast-col">
@@ -121,9 +103,7 @@
     </div>
 
     <div class="footer">
-      <a
-        href="https://github.com/negaramatin/shecodes-weather-app"
-        target="”_blank”"
+      <a href="https://github.com/negaramatin/shecodes-weather-app"
         >Open-source code</a
       >
       by
