@@ -22,6 +22,11 @@ body {
 .mb-3 {
   text-align: center;
 }
+.city-search {
+  margin: 0px auto;
+  padding: 10px 10px 10px 10px;
+}
+
 .input-form {
   border: solid 2px #5585b5;
   border-radius: 6px;
@@ -76,12 +81,56 @@ h3 {
   padding: 0px;
   text-align: center;
 }
+#temperature-description,
+#humidity,
+#wind {
+  font-size: 14px;
+  padding: 0px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.last-updated {
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.8);
+  font-style: italic;
+}
+.convert {
+  font-size: 16px;
+  padding: 0px;
+  text-align: center;
+}
+#convert-celsius,
+#convert-fahrenheit {
+  color: #604c96;
+  text-decoration: none;
+  font-weight: 500;
+}
 
+#convert-celsius:hover,
+#convert-fahrenheit:hover {
+  color: #604c96;
+  text-decoration: none;
+  cursor: pointer;
+}
+.active#convert-celsius,
+.active#convert-fahrenheit {
+  text-decoration: none;
+  color: #000;
+  cursor: default;
+}
 .current-deg {
   margin: 0px;
   padding: 0px;
   display: flex;
+  text-align: center;
   align-items: center;
+}
+.current-city {
+  padding: 15px;
 }
 .forecast-col {
   text-align: center;
@@ -118,22 +167,4 @@ h3 {
 a {
   color: #383838;
   text-decoration: underline;
-}
-
-.convert {
-  font-size: 16px;
-  padding: 0px;
-  text-align: center;
-  font-weight: 500;
-}
-#convert-celsius,
-#convert-fahrenheit {
-  color: #604c96;
-  text-decoration: none;
-}
-#convert-celsius:hover,
-#convert-fahrenheit:hover {
-  color: #604c96;
-  text-decoration: none;
-  cursor: pointer;
 }
