@@ -52,15 +52,16 @@ input {
 }
 h1 {
   font-weight: 300;
-  text-align: center;
+  font-size: 36px;
+  text-align: justify;
   margin: 0px;
   padding: 10px 10px 0px 10px;
 }
 h2 {
-  text-align: center;
+  text-align: justify;
   font-size: 16px;
   margin: 0px;
-  padding: 5px 0px 10px 0px;
+  padding: 10px 10px 0px 10px;
 }
 h3 {
   text-align: center;
@@ -81,11 +82,14 @@ h3 {
   padding: 0px;
   text-align: center;
 }
+.current-icon:hover {
+  background-color: rgba(255, 244, 185, 0.255);
+}
 #temperature-description,
 #humidity,
 #wind {
-  font-size: 14px;
-  padding: 0px;
+  font-size: 16px;
+  padding: 30px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -105,14 +109,14 @@ h3 {
 }
 #convert-celsius,
 #convert-fahrenheit {
-  color: #604c96;
+  color: #53a8b6;
   text-decoration: none;
   font-weight: 500;
 }
 
 #convert-celsius:hover,
 #convert-fahrenheit:hover {
-  color: #604c96;
+  color: #53a8b6;
   text-decoration: none;
   cursor: pointer;
 }

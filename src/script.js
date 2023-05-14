@@ -190,7 +190,7 @@ function formatDate(timestamp) {
   ];
   let month = months[updateDate.getMonth()];
   let year = updateDate.getFullYear();
-  return `Updated: ${day} ${date} ${month} ${year}, ${hours}:${minutes}`;
+  return ` last updated: ${day} ${date} ${month} ${year}, ${hours}:${minutes}`;
 }
 
 // show temperature of current location
