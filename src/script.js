@@ -25,7 +25,7 @@ citySearch.addEventListener("submit", getCity);
 function convertFH(event) {
   event.preventDefault();
   if (celsiusActive === true) {
-    let updateFH = document.querySelector(".currentTemp");
+    let updateFH = document.querySelector(".current-city-temp");
     let temp = parseInt(updateFH.innerHTML);
     updateFH.innerHTML = `${Math.round((temp * 9) / 5 + 32)}°F`;
     celsiusActive = false;
@@ -38,9 +38,9 @@ function convertFH(event) {
 function convertCS(event) {
   event.preventDefault();
   if (celsiusActive === false) {
-    let tempToCS = document.querySelector(".currentTemp");
+    let tempToCS = document.querySelector(".current-city-temp");
     let temp = parseInt(tempToCS.innerHTML);
-    let updateCS = document.querySelector(".currentTemp");
+    let updateCS = document.querySelector(".current-city-temp");
     let convertCS = Math.round(((temp - 32) * 5) / 9);
     updateCS.innerHTML = `${convertCS}°C`;
     celsiusActive = true;
