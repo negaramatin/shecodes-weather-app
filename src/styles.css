@@ -145,12 +145,23 @@ h3 {
 .forecast-col:hover {
   background-color: rgba(255, 244, 185, 0.255);
 }
+.forecast-desc {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
 
 .forecast-day {
   text-align: center;
   font-weight: bold;
   display: block;
   padding: 10px;
+}
+.forecast-min {
+  opacity: 0.6;
+}
+.forecast-max {
+  font-weight: bold;
 }
 .forecast-icon {
   text-align: center;

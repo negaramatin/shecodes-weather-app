@@ -52,7 +52,15 @@ function convertCS(event) {
 
 // show current date/time information
 function formatDate(date) {
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let dayOfWeek = days[new Date().getDay()];
   let hour = date.getHours();
   let minute = date.getMinutes();
@@ -62,22 +70,21 @@ function formatDate(date) {
     pm = true;
   }
   let months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
+    "January",
+    "February",
+    "March",
+    "April",
     "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
-  let monthOfYear = months[new Date().getMonth()];
-
   let currentDate = new Date();
+  let monthOfYear = months[new Date().getMonth()];
   let dayOfMonth = currentDate.getDate();
 
   let timeString = `${hour}:${minute.toString().padStart(2, "0")}`;
@@ -113,6 +120,10 @@ function showTemperature(response) {
   windSpeed.innerHTML = `Windspeed: ${Math.round(
     response.data.wind.speed
   )}km/h`;
+  let feelsLike = document.querySelector("#feels");
+  feelsLike.innerHTML = `Feels like: ${Math.round(
+    response.data.temperature.feels_like
+  )}°C`;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.city;
   let updateTime = document.querySelector(".last-updated");
@@ -197,7 +208,7 @@ function formatDate(timestamp) {
 function showPosition(position) {
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
-  let locUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${long}&lat=${lat}&key=${apiKey}`;
+  let locUrl = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}&key=${apiKey}`;
   axios.get(`${locUrl}`).then(showTemperatureLoc);
   celsiusActive = true;
 }
@@ -208,3 +219,51 @@ function getCurrentPosition(position) {
 
 let currentLoc = document.querySelector("#location");
 currentLoc.addEventListener("click", getCurrentPosition);
+
+// displayForecast
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row"`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+       <div class="row forecast-day">${formatDay(forecastDay.time)}</div>
+       <div class="row">
+
+       <div class="col forecast-icon">
+         <img src=
+        "${forecastDay.condition.icon_url}" alt=
+      "${forecastDay.condition.description}"></div>
+
+       </div>
+       <div class="row forecast-desc">${forecastDay.condition.description}</div>
+       <div class="row forecast-temp">
+         <span class="forecast-min">${Math.round(
+           forecastDay.temperature.minimum
+         )}°C</span> |
+         <span class="forecast-max">${Math.round(
+           forecastDay.temperature.maximum
+         )}°C</span>
+       </div>
+       
+     </div>`;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  let apiKey = "397b6cfabf43773o0a3b49c408t16f89";
+  let locUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(`${locUrl}`).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  //let day = date.getDay();
+  let day = days[date.getDay()];
+  return day;
+}

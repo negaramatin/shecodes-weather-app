@@ -73,6 +73,8 @@
             <a href="#" id="convert-celsius" class="active">°C</a>
             <a href="#" id="convert-fahrenheit">°F</a>
           </span>
+          <br />
+          <div class="justify-content-center" id="feels"></div>
           <div class="justify-content-center" id="humidity"></div>
           <div class="justify-content-center" id="wind"></div>
         </div>
@@ -80,59 +82,27 @@
       </div>
       <!--- Forecast -->
       <br />
-      <div class="row forecast"><h3>5-day forecast</h3></div>
-      <div class="row forecast">
-        <div class="col forecast-col">
-          <div class="row forecast-day">Tue</div>
-          <div class="row forecast-icon">
-            <i class="fa-solid fa-cloud-sun"></i>
-          </div>
-          <div class="row forecast-temp">27°/11°C</div>
-        </div>
-        <div class="col forecast-col">
-          <div class="row forecast-day">Wed</div>
-          <div class="row forecast-icon">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-          <div class="row forecast-temp">28°/12°C</div>
-        </div>
-        <div class="col forecast-col">
-          <div class="row forecast-day">Thu</div>
-          <div class="row forecast-icon">
-            <i class="fa-solid fa-cloud-sun"></i>
-          </div>
-          <div class="row forecast-temp">26°/14°C</div>
-        </div>
-        <div class="col forecast-col">
-          <div class="row forecast-day">Fri</div>
-          <div class="row forecast-icon">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-          <div class="row forecast-temp">25°/11°C</div>
-        </div>
-        <div class="col forecast-col">
-          <div class="row forecast-day">Sat</div>
-          <div class="row forecast-icon">
-            <i class="fa-solid fa-cloud-sun"></i>
-          </div>
-          <div class="row forecast-temp">27°/9°C</div>
+      <div class="row forecast"><h3 id="forecast">Forecast</h3></div>
+      <div class="row weather-forecast" id="weather-forecast"></div>
+      <div class="row">
+        <div class="col">
+          <footer class="footer">
+            <a
+              href="https://github.com/negaramatin/shecodes-weather-app"
+              target="”_blank”"
+              >Open-source code</a
+            >
+            by
+            <a
+              href="https://www.linkedin.com/in/negar-matin-b7a38a261/"
+              target="_blank"
+              >Negar Matin</a
+            >
+          </footer>
         </div>
       </div>
     </div>
 
-    <div class="footer">
-      <a
-        href="https://github.com/negaramatin/shecodes-weather-app"
-        target="”_blank”"
-        >Open-source code</a
-      >
-      by
-      <a
-        href="https://www.linkedin.com/in/negar-matin-b7a38a261/"
-        target="_blank"
-        >Negar Matin</a
-      >
-    </div>
     <script src="src/script.js"></script>
   </body>
 </html>
