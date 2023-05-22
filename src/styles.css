@@ -67,7 +67,7 @@ h3 {
   text-align: center;
   font-size: 16px;
   font-weight: 300;
-  padding: 0px;
+  padding: 30px;
   margin: 0px;
 }
 .current-city-temp {
@@ -76,20 +76,16 @@ h3 {
   font-size: 40px;
   text-align: center;
 }
-
 .current-icon {
-  font-size: 72px;
+  font-size: 60px;
   padding: 0px;
-  text-align: center;
-}
-.current-icon:hover {
-  background-color: rgba(255, 244, 185, 0.255);
 }
 #temperature-description,
 #humidity,
-#wind {
+#wind,
+#feels {
   font-size: 16px;
-  padding: 30px;
+  padding: 3px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -126,10 +122,10 @@ h3 {
   color: #000;
   cursor: default;
 }
-.current-deg {
+.current-deg,
+.current-icon {
   margin: 0px;
   padding: 0px;
-  display: flex;
   text-align: center;
   align-items: center;
 }
@@ -142,9 +138,7 @@ h3 {
   padding: 5px;
   width: 20%;
 }
-.forecast-col:hover {
-  background-color: rgba(255, 244, 185, 0.255);
-}
+
 .forecast-desc {
   display: block;
   text-align: center;
@@ -155,7 +149,7 @@ h3 {
   text-align: center;
   font-weight: bold;
   display: block;
-  padding: 10px;
+  padding: 0px;
 }
 .forecast-min {
   opacity: 0.6;
@@ -165,8 +159,9 @@ h3 {
 }
 .forecast-icon {
   text-align: center;
-  font-size: 30px;
-  padding: 10px;
+  padding: 0px;
+  width: 100px;
+  align-items: center;
 }
 .forecast-temp {
   text-align: center;

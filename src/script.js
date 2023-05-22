@@ -220,7 +220,7 @@ function getCurrentPosition(position) {
 let currentLoc = document.querySelector("#location");
 currentLoc.addEventListener("click", getCurrentPosition);
 
-// displayForecast
+// show forecast
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
@@ -229,7 +229,7 @@ function displayForecast(response) {
     if (index < 7) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
+        `<div class="col">
        <div class="row forecast-day">${formatDay(forecastDay.time)}</div>
        <div class="row">
 
@@ -256,14 +256,39 @@ function displayForecast(response) {
 }
 function getForecast(coordinates) {
   let apiKey = "397b6cfabf43773o0a3b49c408t16f89";
-  let locUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
-  axios.get(`${locUrl}`).then(displayForecast);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(displayForecast);
 }
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  //let day = date.getDay();
   let day = days[date.getDay()];
   return day;
+}
+//call forecast
+function showTemperature(response) {
+  let temperature = Math.round(response.data.temperature.current);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = `${temperature}°C`;
+  let temperatureDesc = document.querySelector("#temperature-description");
+  temperatureDesc.innerHTML = response.data.condition.description;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
+  let windSpeed = document.querySelector("#wind");
+  windSpeed.innerHTML = `Windspeed: ${Math.round(
+    response.data.wind.speed
+  )}km/h`;
+  let feelsLike = document.querySelector("#feels");
+  feelsLike.innerHTML = `Feels like: ${Math.round(
+    response.data.temperature.feels_like
+  )}°C`;
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = response.data.city;
+  let updateTime = document.querySelector(".last-updated");
+  updateTime.innerHTML = formatDate(response.data.time * 1000);
+  let currentIcon = document.querySelector("#main-icon");
+  currentIcon.setAttribute("src", `${response.data.condition.icon_url}`);
+  currentIcon.setAttribute("alt", `${response.data.condition.description}`);
+  getForecast(response.data.coordinates);
 }
