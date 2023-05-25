@@ -134,30 +134,24 @@ function showTemperature(response) {
 }
 // show temperature of geolocation city
 function showTemperatureLoc(response) {
-  let temperature = Math.round(response.data.daily[0].temperature.day);
+  let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = `${temperature}°C`;
   let temperatureDesc = document.querySelector("#temperature-description");
-  temperatureDesc.innerHTML = response.data.daily[0].condition.description;
+  temperatureDesc.innerHTML = response.data.condition.description;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `Humidity: ${response.data.daily[0].temperature.humidity}%`;
+  humidity.innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = `Windspeed: ${Math.round(
-    response.data.daily[0].wind.speed
+    response.data.wind.speed
   )}km/h`;
   let currentIcon = document.querySelector("#main-icon");
-  currentIcon.setAttribute(
-    "src",
-    `${response.data.daily[0].condition.icon_url}`
-  );
-  currentIcon.setAttribute(
-    "alt",
-    `${response.data.daily[0].condition.description}`
-  );
+  currentIcon.setAttribute("src", `${response.data.condition.icon_url}`);
+  currentIcon.setAttribute("alt", `${response.data.condition.description}`);
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.city;
   let updateTime = document.querySelector(".last-updated");
-  updateTime.innerHTML = formatDate(response.data.daily[0].time * 1000);
+  updateTime.innerHTML = formatDate(response.data.time * 1000);
 }
 axios
   .get(`${apiUrl}${cityResult}&key=${apiKey}&units=metric`)
