@@ -218,34 +218,35 @@ currentLoc.addEventListener("click", getCurrentPosition);
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
-  let forecastHTML = `<div class="row"`;
+  let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 7) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
-       <div class="row forecast-day">${formatDay(forecastDay.time)}</div>
-       <div class="row">
-
-       <div class="col forecast-icon">
-         <img src=
-        "${forecastDay.condition.icon_url}" alt=
-      "${forecastDay.condition.description}"></div>
-
-       </div>
-       <div class="row forecast-desc">${forecastDay.condition.description}</div>
-       <div class="row forecast-temp">
-         <span class="forecast-min">${Math.round(
-           forecastDay.temperature.minimum
-         )}°C</span> |
-         <span class="forecast-max">${Math.round(
-           forecastDay.temperature.maximum
-         )}°C</span>
-       </div>
-       
-     </div>`;
+        <div class="row forecast-day">${formatDay(forecastDay.time)}</div>
+        <div class="row">
+          <div class="col forecast-icon">
+            <img src="${forecastDay.condition.icon_url}" alt="${
+          forecastDay.condition.description
+        }" />
+          </div>
+        </div>
+        <div class="row forecast-desc">${
+          forecastDay.condition.description
+        }</div>
+        <div class="row forecast-temp">
+          <span class="forecast-min">${Math.round(
+            forecastDay.temperature.minimum
+          )}°C</span> |
+          <span class="forecast-max">${Math.round(
+            forecastDay.temperature.maximum
+          )}°C</span>
+        </div>
+      </div>`;
     }
   });
+  forecastHTML += "</div>";
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
