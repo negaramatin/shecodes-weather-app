@@ -1,23 +1,29 @@
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  color: #383838;
+  font-family: "Roboto", sans-serif;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/083/235/original/364641-4k-wallpaper_%281%29.jpg?1685089298");
+  background-size: cover;
+  background-color: #5585b5;
+  color: #000;
   font-weight: 300px;
   text-align: center;
-  background: radial-gradient(
-    circle at 0.7% 1%,
-    rgb(215, 248, 247) 0%,
-    rgb(102, 188, 239) 100.2%
-  );
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .container {
   border: solid 4px #5585b5;
-  width: 70%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 30px;
-  position: relative;
-  top: 50px;
-  border-radius: 6px;
-  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .mb-3 {
   text-align: center;
@@ -33,7 +39,6 @@ body {
   font-size: 16px;
   padding: 6px;
   height: 38px;
-  width: 70%;
 }
 input {
   outline-color: #53a8b6;
@@ -65,13 +70,12 @@ h2 {
 }
 h3 {
   text-align: center;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px;
   margin: 0px;
 }
 .current-city-temp {
-  width: 40%;
   margin: 0 auto;
   font-size: 40px;
   text-align: center;
@@ -85,7 +89,7 @@ h3 {
 #wind,
 #feels {
   font-size: 16px;
-  padding: 3px;
+  padding: 0px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -105,14 +109,14 @@ h3 {
 }
 #convert-celsius,
 #convert-fahrenheit {
-  color: #53a8b6;
+  color: #b55169;
   text-decoration: none;
   font-weight: 500;
 }
 
 #convert-celsius:hover,
 #convert-fahrenheit:hover {
-  color: #53a8b6;
+  color: #b55169;
   text-decoration: none;
   cursor: pointer;
 }
@@ -136,7 +140,6 @@ h3 {
   text-align: center;
   font-size: 16px;
   padding: 5px;
-  width: 20%;
 }
 
 .forecast-desc {
@@ -153,9 +156,11 @@ h3 {
 }
 .forecast-min {
   opacity: 0.6;
+  font-size: 16px;
 }
 .forecast-max {
   font-weight: bold;
+  font-size: 16px;
 }
 .forecast-icon {
   text-align: center;
@@ -169,12 +174,13 @@ h3 {
   padding: 10px;
 }
 .footer {
-  position: relative;
-  bottom: -70px;
+  width: 100%;
+  height: 1.2rem;
+  text-align: center;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
 }
 a {
-  color: #383838;
+  color: #000;
   text-decoration: underline;
 }
